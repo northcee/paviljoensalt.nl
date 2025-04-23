@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getijden West-Terschelling</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Getijden West-Terschelling</h1>
+            <p class="subtitle">Real-time waterhoogte metingen</p>
+        </header>
+        
+        <main>
+            <div class="card" id="currentLevelContainer">
+                <div class="current-tide">
+                    <h2>Huidige Waterstand</h2>
+                    <div class="tide-status">
+                        <div class="tide-trend">
+                            <div id="tideDirection" class="tide-direction">
+                                <svg viewBox="0 0 24 24" class="trend-arrow">
+                                    <path d="M12 3l7 7-1.4 1.4L13 6.8V21h-2V6.8L6.4 11.4 5 10l7-7z"/>
+                                </svg>
+                                <span id="trendText">Opkomend</span>
+                            </div>
+                        </div>
+                        <div id="currentLevel" class="current-level">--</div>
+                        <div id="tidePhase" class="tide-phase">
+                            <div class="tide-dot"></div>
+                            <div class="tide-line"></div>
+                            <div class="tide-labels">
+                                <span>Laagwater</span>
+                                <span>Hoogwater</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="timestamp" class="timestamp">--</div>
+                </div>
+            </div>
+
+            <div class="card chart-container">
+                <div class="date-selector">
+                    <button id="prevDay" class="button">←</button>
+                    <span id="currentDate" class="current-date"></span>
+                    <button id="nextDay" class="button">→</button>
+                    <button id="todayButton" class="button today-button">Vandaag</button>
+                </div>
+                <canvas id="tideChart"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

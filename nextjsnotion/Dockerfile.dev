@@ -1,0 +1,17 @@
+# Development Dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Installeer dependencies
+COPY package*.json ./
+RUN npm install
+
+# Kopieer de rest van de applicatie
+COPY . .
+
+# Expose poort 3000
+EXPOSE 3000
+
+# Start de development server
+CMD ["npm", "run", "dev"] 
